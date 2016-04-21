@@ -144,6 +144,7 @@ var spanishColor = function(colorName) {
 
 // Put your answer below -------------------------
 var spanishColor = function(colorName) {
+  var colorName = colorName.toLowerCase();
 
   var colors = {
     "rojo": {
@@ -162,10 +163,11 @@ var spanishColor = function(colorName) {
       hexcode: "#000000"
     }
   }
-
-  var hex = colors.colorName.toLowerCase().hexcode;
+  var hex = colors[colorName.toLowerCase()].hexcode
   return hex
 };
+
+
 
 // -----------------------------------------------
 
@@ -207,14 +209,10 @@ var callTenTimes = function(callback) {
 
 // Put your answer below -------------------------
 
-function callNtimes(n, callback) {
-  var range = execute.range(n);
-  execute.each(range, callback);
+var callNtimes = function(n, callback) {
+  var range = _.range(n);
+  _.each(range, callback);
 };
-
-console.log(callNtimes(5, function() {
-  alert("Ran this function 5 times.");
-}));
 
 // -----------------------------------------------
 
